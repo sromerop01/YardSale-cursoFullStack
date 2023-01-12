@@ -1,0 +1,530 @@
+/* Generales */
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #232830;
+    --very-light-gray: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+
+}
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+.inactive{
+    display: none;
+}
+
+/* Navbar */
+.navbar-menu{
+    display: flex;
+    width: 95%;
+    height: 60px;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 3px solid var(--very-light-gray);
+}
+.menu{
+    display: none;
+}
+.logo-navbar{
+    width: 150px;
+    margin-right: 12px;
+}
+.navbar-left{
+    display: flex;
+}
+.navbar-left ul{
+    display: flex;
+    margin-left: 12px;
+}
+.navbar-left ul, .navbar-right ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.navbar-left ul li a,.navbar-right ul li a{
+    text-decoration: none;
+    color: var(--very-light-gray);
+    border: 1px solid var(--white);
+    padding: 8px;
+    border-radius: 8px;
+}
+.navbar-left ul li a:hover,.navbar-right ul li a:hover{
+    text-decoration: none;
+    color: var(--hospital-green);
+    border: 1px solid var(--hospital-green);
+    
+}
+.navbar-email{
+    color: var(--very-light-gray);
+    font-size: var(--sm);
+    margin-right: 12px;
+}
+.navbar-cart{
+    position: relative;
+}
+.navbar-cart div{
+    width: 16px;
+    height: 16px;
+    background-color: var(--hospital-green);
+    border-radius: 50%;
+    font-size: var(--sm);
+    font-weight: bold;
+    position: absolute;
+    top: -7px;
+    right: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Desktop menu */
+.desktop-menu {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    background: var(--white);
+    width: 100px;
+    height: auto;
+    border: 3px solid var(--very-light-gray);
+    border-radius: 6px;
+    padding: 20px 20px 0 20px;
+}
+.desktop-menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.desktop-menu ul li{
+    text-align: end;
+}
+.desktop-menu ul li:not(:last-child) {
+    font-weight: bold;
+}
+.desktop-menu ul li a{
+    color: var(--black);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.desktop-menu ul li:last-child{
+    padding-top: 20px;
+    border-top: 1px solid var(--very-light-gray);
+
+}
+.desktop-menu ul li:last-child a{
+    color: var(--hospital-green);
+    font-size: var(--sm);
+}
+
+/* Mobile menu */
+.mobile-menu{
+    position: absolute;
+    top: 60px;
+    padding: 24px;
+}
+.mobile-menu a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+}
+.mobile-menu ul{
+    list-style: none;
+    margin: 24PX 0 0;
+    padding: 0;
+}
+.mobile-menu ul:nth-child(1){
+    border-bottom: 1px solid var(--very-light-gray);
+}
+.mobile-menu ul li{
+    margin-bottom: 24px;
+}
+.mobile-menu{
+    font-size: var(--sm);
+    font-weight: 300;
+}
+.mobile-menu ul:last-child{
+    position: absolute;
+}
+
+.mobile-menu ul:last-child li{
+    margin-bottom: 0;
+}
+.mobile-menu .signout{
+    font-size: var(--sm);
+    color: var(--hospital-green) !important;
+}
+
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,240px);
+    gap: 24px;
+}
+.product-card{
+    width: 240px;
+}
+.product-card img{
+    width: 100%;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.product-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-info div p:nth-child(1){
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.product-info div p:nth-child(2){
+    font-size: var(--sm);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--very-light-gray);
+}
+.product-info figure{
+    margin: 0;
+}
+.product-info figure img{
+    width: 35px;
+    height: 35px;
+}
+
+
+
+.login {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.form-container{
+    width: 300px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+.form-container.new-password{
+    width: 300px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+.form-container.recovery{
+    width: 300px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+}
+.logo {
+    width: 150px;
+    margin-bottom: 48px;
+    justify-self: center;
+    display: none;
+}
+.title {
+    font-size: var(--lg);
+    margin-bottom: 12px;
+    text-align: center;
+}
+.subtitle{
+    color: var(--very-light-gray);
+    font-size: var(--md);
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 32px;
+    text-align: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.form p{
+    font-size: var(--md);
+    color: var(--very-light-gray);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+.label{
+    font-size: var(--sm);
+    font-weight: bold;
+    margin-bottom: 4px;
+    
+}
+.input{
+    background-color: var(--text-input-field);
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+    font-size: var(--md);
+    padding: 6px;
+    margin-bottom: 16px;
+}
+.primary-button{
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    margin-top: 20px;
+}
+.login-button{
+    margin-top: 14px;
+    margin-bottom: 10px;
+}
+.image-email{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: var(--text-input-field);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.resend {
+    font-size: var(--sm);
+}
+.resend span{
+    color: var(--very-light-gray);
+}
+.resend a{
+    color: var(--hospital-green);
+    text-decoration: none;
+}
+.image-email img {
+    width: 80px
+}
+.forgot {
+    font-size: var(--sm);
+    display: flex;
+    flex-direction: column;
+}
+.forgot a{
+    margin-bottom: 52px;
+    color: var(--hospital-green);
+    text-decoration: none;
+    text-align: center;
+}
+.secondary-button{
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 2px solid var(--hospital-green);
+    color: var(--hospital-green);
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+}
+.secondary-button.edit-button{
+    margin-top: 32px;
+}
+.title-create {
+    font-size: var(--lg);
+    margin-bottom: 32px;
+}
+.my-order{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.title-my-order{
+    font-size: var(--lg);
+    margin-bottom: 40px;
+}
+.my-order-container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+}
+.my-order-content{
+    display: flex;
+    flex-direction: column;
+}
+.my-order-info{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--text-input-field);
+    padding: 0 24px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+.my-order-info p:nth-child(1){
+    display: flex;
+    flex-direction: column;
+}
+.my-order-info p:nth-child(2){
+    text-align: end;
+}
+.my-order-info span:nth-child(2){
+    font-size: var(--sm);
+    color: var(--very-light-gray);
+}
+.cart-items{
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+.cart-items figure{
+    margin: 0;
+}
+.cart-items figure img{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+}
+.cart-items p:nth-child(2){
+    color: var(--very-light-gray);
+}
+.cart-items p:nth-child(3){
+    font-size: var(--md);
+    font-weight: bold;
+}
+.my-orders-info{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+.my-orders-info p:nth-child(1){
+    display: flex;
+    flex-direction: column;
+}
+.my-orders-info p:nth-child(2){
+    text-align: end;
+}
+.my-orders-info span:nth-child(2){
+    font-size: var(--sm);
+    color: var(--very-light-gray);
+}
+.product-details{
+    width: 360px;
+    padding-bottom: 24px;
+    
+}
+.product-close{
+    background: var(--white);
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      z-index: 2;
+      padding: 12px;
+      border-radius: 50%;
+}
+.product-close img {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+.product-close img:hover {
+    cursor: pointer;
+}
+.product-details > img:nth-child(2) {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+.product-detail-info{
+    margin: 0 24px;
+
+}
+.product-detail-info p:nth-child(1){
+    font-weight: bold;
+    font-size: var(--md);
+    margin-bottom: 0;
+}
+.product-detail-info p:nth-child(2){
+    color: var(--very-light-gray);
+    font-size: var(--md);
+    margin-top: 0;
+}
+.product-detail-info p:nth-child(3){
+    color: var(--very-light-gray);
+    font-size: var(--sm);
+}
+.add-to-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width:640px) {
+    .menu{
+        display: block;
+        margin-top: 12px;
+        width: 32px;
+        height: 32px;
+
+    }
+    .navbar-left ul{
+        display: none;
+    }
+    .navbar-email{
+        display: none;
+    }
+    .navbar-cart{
+        margin-right: 12px;
+    }
+    .desktop-menu{
+        display: none;
+    }
+    .cards-container{
+        grid-template-columns: repeat(auto-fill,140px);
+    }
+    .product-card{
+        width: 140px;
+    }
+    .product-card img{
+        width: 100%;
+        height: 140px;
+    }
+    .logo{
+        display: block;
+    }
+    .secondary-button {
+        width: 300px;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 24px;
+    }
+    .primary-button.create-button{
+        width: 300px;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 24px;
+    }
+}
+
+@media (min-width:641px) { 
+    .mobile-menu{
+        display: none;
+    }
+}
