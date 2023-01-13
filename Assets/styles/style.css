@@ -237,6 +237,7 @@ body {
 
 /* Product details */
 .product-details{
+    background-color: var(--white);
     position: absolute;
     right: 0;
     width: 360px;
@@ -572,7 +573,16 @@ body {
     }
     .shopping-cart {
         width: 100%;
-      }
+    }
+    .product-details{
+        width: 100%;
+    }
+    .product-details > img:nth-child(2) {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 24px;
+    }
     .cards-container{
         grid-template-columns: repeat(auto-fill,140px);
     }
