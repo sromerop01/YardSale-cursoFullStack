@@ -127,6 +127,7 @@ body {
 
 /* Mobile menu */
 .mobile-menu{
+    background-color: var(--white);
     position: absolute;
     top: 60px;
     padding: 24px;
@@ -215,6 +216,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill,240px);
     gap: 24px;
+    margin: 16px;
 }
 .product-card{
     width: 240px;

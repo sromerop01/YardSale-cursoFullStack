@@ -40,3 +40,109 @@ function toggleShoppingCart(){
     }
     asideShoppingCart.classList.toggle('inactive');
 }
+
+const cardsContainer=document.querySelector('.cards-container')
+/*
+<div class="product-card">
+    <img src="./Assets/switch.jfif" alt="">
+    <div class="product-info">
+        <div>
+            <p>$$$$$$$</p>
+            <p>Producto 1</p>
+        </div>
+        <figure>
+            <img src="./Assets/Icons/bt_add_to_cart.svg" alt="cart">
+        </figure>
+    </div>
+</div>
+*/
+
+//Lista de productos
+const productList =[];
+productList.push({
+    name: 'Nintendo Switch',
+    price: 2000000,
+    imagen: './Assets/switch.jfif',
+});
+productList.push({
+    name: 'Xbox series X',
+    price: 3000000,
+    imagen: './Assets/xbox.jfif',
+});
+productList.push({
+    name: 'Playstation 5',
+    price: 3500000,
+    imagen: './Assets/play.jpg',
+});
+
+//Recorremos la lista de procutos para agregarlo al html
+// for(product of productList){
+//     const productCard=document.createElement('div');
+//     productCard.classList.add('product-card');
+
+//     const img=document.createElement('img');
+//     img.setAttribute('src', product.imagen);
+
+//     const productInfo=document.createElement('div');
+//     productInfo.classList.add('product-info');
+
+//     const productInfoDiv=document.createElement('div');
+
+//     const productPrice=document.createElement('p');
+//     productPrice.innerText ='$'+product.price;
+//     const productName=document.createElement('p');
+//     productName.innerText = product.name;
+
+//     productInfoDiv.append(productPrice, productName)
+
+//     const productInfoFigure=document.createElement('figure');
+//     const productImgCart=document.createElement('img');
+//     productImgCart.setAttribute('src', './Assets/Icons/bt_add_to_cart.svg');
+
+//     productInfoFigure.appendChild(productImgCart);
+
+//     productInfo.append(productInfoDiv, productInfoFigure);
+
+//     productCard.append(img, productInfo);
+
+//     cardsContainer.appendChild(productCard);
+
+// }
+
+//Creamo una funcion para optimizar y organizar
+function renderProducts(arr){
+    for(product of arr){
+        const productCard=document.createElement('div');
+        productCard.classList.add('product-card');
+    
+        const img=document.createElement('img');
+        img.setAttribute('src', product.imagen);
+    
+        const productInfo=document.createElement('div');
+        productInfo.classList.add('product-info');
+    
+        const productInfoDiv=document.createElement('div');
+    
+        const productPrice=document.createElement('p');
+        productPrice.innerText ='$'+product.price;
+        const productName=document.createElement('p');
+        productName.innerText = product.name;
+    
+        productInfoDiv.append(productPrice, productName)
+    
+        const productInfoFigure=document.createElement('figure');
+        const productImgCart=document.createElement('img');
+        productImgCart.setAttribute('src', './Assets/Icons/bt_add_to_cart.svg');
+    
+        productInfoFigure.appendChild(productImgCart);
+    
+        productInfo.append(productInfoDiv, productInfoFigure);
+    
+        productCard.append(img, productInfo);
+    
+        cardsContainer.appendChild(productCard);
+    
+    }
+}
+
+renderProducts(productList);
