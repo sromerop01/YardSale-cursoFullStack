@@ -168,11 +168,14 @@ body {
 /* Aside Shopping card*/
 .shopping-cart{
     background-color: var(--white);
+    border: 3px solid var(--very-light-gray);
+    border-radius: 6px;
     width: 360px;
     padding: 0 24px;
     box-sizing: border-box;
     position: absolute;
     right: 0;
+    top: 60px;
 }
 .title-container {
     display: flex;
@@ -234,6 +237,12 @@ body {
     font-size: var(--sm);
     color: var(--very-light-gray);
 }
+.add-to-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
 
 /* Product details */
 .product-details{
@@ -286,11 +295,6 @@ body {
 .product-detail-info p:nth-child(3){
     color: var(--very-light-gray);
     font-size: var(--sm);
-}
-.add-to-cart{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 

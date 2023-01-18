@@ -1,5 +1,6 @@
 const navEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
+const myOrders = document.querySelector('.myorders');
 const navMobileMenu = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const iconShoppingCart = document.querySelector('.navbar-cart');
@@ -10,6 +11,7 @@ const productDetailClose = document.querySelector('.product-close')
 navEmail.addEventListener('click',toggleDesktopMenu);
 navMobileMenu.addEventListener('click',toggleMobileMenu);
 iconShoppingCart.addEventListener('click',toggleShoppingCart);
+myOrders.addEventListener('click', toggleMyOrders);
 productDetailClose.addEventListener('click', closeProductDetail);
 
 function toggleDesktopMenu(){
@@ -55,6 +57,10 @@ function openProductDetail(){
 }
 function closeProductDetail(){
     productDetailContainer.classList.add('inactive');
+}
+
+function toggleMyOrders(){
+    
 }
 
 const cardsContainer=document.querySelector('.cards-container')
