@@ -154,9 +154,6 @@ body {
     font-size: var(--sm);
     font-weight: 300;
 }
-.mobile-menu ul:last-child{
-    position: absolute;
-}
 .mobile-menu ul:last-child li{
     margin-bottom: 0;
 }

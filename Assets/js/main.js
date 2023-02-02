@@ -57,21 +57,42 @@ function closeProductDetail(){
     productDetailContainer.classList.add('inactive');
 }
 
-// const cardsContainer=document.querySelector('.cards-container')
-// /*
-// <div class="product-card">
-//     <img src="./Assets/switch.jfif" alt="">
-//     <div class="product-info">
-//         <div>
-//             <p>$$$$$$$</p>
-//             <p>Producto 1</p>
-//         </div>
-//         <figure>
-//             <img src="./Assets/Icons/bt_add_to_cart.svg" alt="cart">
-//         </figure>
-//     </div>
-// </div>
-// */
+
+const API = "https://api.escuelajs.co/api/v1";
+
+const content = null || document.querySelector('.cards-container');
+
+async function fetchData(urlApi){
+    const response= await fetch(urlApi);
+    const data = await response.json();
+    return data;
+}
+
+(async () =>{
+    try {
+       const products = await fetchData(`${API}/products`)
+       let view = `
+        ${products.map(product => `
+            <div class="product-card">
+                    <img src="${product.category.image}" alt="">
+                    <div class="product-info">
+                        <div>
+                            <p>${product.title}</p>
+                            <p>$ ${product.price}</p>
+                        </div>
+                        <figure>
+                            <img src="./Assets/Icons/bt_add_to_cart.svg" alt="cart">
+                        </figure>
+                    </div>
+            </div>
+        `).join('')}
+       `;
+       content.innerHTML = view;
+    } catch (error) {
+        console.log(error);
+    }
+})();
+
 
 // //Lista de productos
 // const productList =[];
@@ -163,38 +184,3 @@ function closeProductDetail(){
 // }
 
 // renderProducts(productList);
-
-const API = "https://api.escuelajs.co/api/v1";
-
-const content = null || document.querySelector('.cards-container');
-
-async function fetchData(urlApi){
-    const response= await fetch(urlApi);
-    const data = await response.json();
-    return data;
-}
-
-(async () =>{
-    try {
-       const products = await fetchData(`${API}/products`)
-       let view = `
-        ${products.map(product => `
-            <div class="product-card">
-                    <img src="${product.category.image}" alt="">
-                    <div class="product-info">
-                        <div>
-                            <p>${product.title}</p>
-                            <p>$ ${product.price}</p>
-                        </div>
-                        <figure>
-                            <img src="./Assets/Icons/bt_add_to_cart.svg" alt="cart">
-                        </figure>
-                    </div>
-            </div>
-        `).join('')}
-       `;
-       content.innerHTML = view;
-    } catch (error) {
-        console.log(error);
-    }
-})();
